@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Let's Watch A Movie</title>
+
+	<!--bower:css-->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<!--endbower-->
+	<!-- inject:css -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- endinject -->
+</head>
+<body ng-controller="MovieController as movie">
+	
+	<div class="container">
+		
+		<h1>Movie Finder</h1>
+		<div class="input-group">
+			<input type="text" class="form-control" ng-model="movie.vm.movieSearch">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="submit" ng-click="movie.searchResults(weather.vm.movieSearch)">Let's find a movie!</button>
+			</span>
+		</div>
+		
+		<div ui-view>	
+		<!-- second display -->
+		</div>
+	</div>
+
+
+	<!-- bower:js -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<!-- endbower -->
+	<!-- inject:js -->
+	<script src="app/app.module.js"></script>
+	<script src="app/detail/movie.detail.controller.js"></script>
+	<script src="app/core/movie.service.js"></script>
+	<script src="app/search/search.controller.js"></script>
+	<!-- endinject -->
+</body>
+</html>
