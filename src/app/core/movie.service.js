@@ -7,17 +7,17 @@
 
 	movieService.$inject = ['$http', '$q'];
 
-	function movieServices($http, q){
+	function movieService($http, $q){
 
 		var service = {
 			movieResults: movieResults	
-			};
+		};
 			return service;
 
 			function movieResults(movieSearch){
 				var deffered = $q.defer();
 
-				$http.get('http://img.omdbapi.com/?i=' + movieSearch + '&apikey=7723bd31')
+				$http.get('http://www.omdbapi.com/?s=' + movieSearch)
 					 .then(function(response){
 					 	deffered.resolve(response.data);
 					 	console.log(response.data)

@@ -5,13 +5,15 @@
 		.module('app')
 		.controller('SearchController', SearchController);
 
-		SearchController.$inject =['movieService']
+		SearchController.$inject =['movieService', '$stateParams']
 	
-	function SearchController(movieService){
+	function SearchController(movieService, $stateParams){
 		var vm = this;
 
 		vm.searchResults = searchResults;
-		vm.movieSearch;
+		vm.movieSearch ='';
+
+		//vm.message = "hello from search";
 
 		function searchResults(movie){
 

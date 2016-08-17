@@ -11,22 +11,27 @@
 	<link rel="stylesheet" href="css/style.css">
 	<!-- endinject -->
 </head>
-<body ng-controller="MovieController as movie">
+<body>
 	
 	<div class="container">
 		
-		<h1>Movie Finder</h1>
-		<div class="input-group">
-			<input type="text" class="form-control" ng-model="movie.vm.movieSearch">
-			<span class="input-group-btn">
-				<button class="btn btn-default" type="submit" ng-click="movie.searchResults(weather.vm.movieSearch)">Let's find a movie!</button>
-			</span>
-		</div>
-		
+		<h1 id="header">Movie Finder</h1>
+		<!-- <nav class="navbar-header">
+		    <div class="nav navbar-nav">
+		    	<a class="navbar-brand">Nav. to other pages</a>
+		    </div>	
+		    <ul>
+		        <li><a ui-sref='search'></a></li>
+		     	<li><a ui-sref='details'></a></li>  
+		    </ul>
+		</nav> -->
+
+	<div class='container'>	
 		<div ui-view>	
 		<!-- second display -->
 		</div>
-	</div>
+	</div>	
+
 
 
 	<!-- bower:js -->
@@ -37,8 +42,8 @@
 	<!-- endbower -->
 	<!-- inject:js -->
 	<script src="app/app.module.js"></script>
-	<script src="app/detail/movie.detail.controller.js"></script>
 	<script src="app/core/movie.service.js"></script>
+	<script src="app/detail/movie.detail.controller.js"></script>
 	<script src="app/search/search.controller.js"></script>
 	<!-- endinject -->
 </body>

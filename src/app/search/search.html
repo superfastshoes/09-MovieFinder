@@ -1,3 +1,25 @@
-<h1>Search Page</h1>
-<h2>{{search.message}}</h2>
-<<a ui-sref="detail">Go to Details</a>
+<!-- User will be doing their searching from here -->
+
+<div class="jumbotron text-center">
+	<h1>The Search Page</h1>	
+</div>
+
+<div ui-view></div>
+
+
+<form ng-submit="search.searchResults(search.movieSearch)">
+	<div class="input-group">
+		<input type="text" class="form-control" ng-model="search.movieSearch">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="submit">Let's find a movie!</button>
+			</span>
+			<div>
+				<p></p>
+			</div>
+	</div>
+</form>
+
+
+
+
+<a ui-sref="detail">Go to Details</a>

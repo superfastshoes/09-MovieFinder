@@ -10,7 +10,7 @@
 	function DetailController($stateParams){
 		var vm = this;
 
-		vm.currentMovieId=$stateParams.movieId;
+		//vm.movie = 'star wars';
 	}
 
 })();

@@ -7,15 +7,16 @@
 				
 			$urlRouterProvider.otherwise('/search');
 
-			stateProvider
+			$stateProvider //Defines the pages in the application
+			//Two pages to define.
 				.state('search', {
 					url: '/search',
-					templatUrl: '/app/search/search.html',
-					controller: 'SearchController as search'
+					templateUrl: 'app/search/search.html', //Specifies where you can find the template file
+					controller: 'SearchController as search'   //Specifies where / or the name / of the controller
 				})
 				.state('detail', {
 					url: '/detail?movieId',
-					templatUrl: '/app/detail/detail.html',
+					templateUrl: 'app/detail/detail.html',
 					controller: 'DetailController as detail'
 				});
 		});
