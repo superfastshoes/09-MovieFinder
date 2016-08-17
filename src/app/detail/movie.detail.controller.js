@@ -12,12 +12,16 @@
         //vm.movieDetails = movieDetails;
         //vm.detailResults = detailResults;
 
-        vm.detailList = {};
+        //vm.detailList = {};
+
+
         vm.movieID = $stateParams.imdbID;
+       // vm.movieData = {};
 
         movieService.movieDetails($stateParams.imdbID).then(
             function(data) {
-            	vm.movie = data;
+            	vm.movieData = data;
+            	console.log(vm.movieData)
             },
             function(error) {
 

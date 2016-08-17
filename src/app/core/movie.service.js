@@ -39,7 +39,7 @@
             $http.get('http://www.omdbapi.com/?i=' + movieId)
                 .then(function(response) {
                         deffered.resolve(response.data);
-                        console.log(response.data)
+                        //console.log(response.data)
                     },
                     function(err) {
                         deffered.reject(err);
