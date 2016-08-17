@@ -1,16 +1,28 @@
-(function(){
-	'use strict';
+(function() {
+    'use strict';
 
-	angular
-		.module('app')
-		.controller('DetailController', DetailController);
-	
-		DetailController.$inject=['$stateParams']
+    angular
+        .module('app')
+        .controller('DetailController', DetailController);
 
-	function DetailController($stateParams){
-		var vm = this;
+    DetailController.$inject = ['$stateParams', 'movieService']
 
-		//vm.movie = 'star wars';
-	}
+    function DetailController($stateParams, movieService) {
+        var vm = this;
+        //vm.movieDetails = movieDetails;
+        //vm.detailResults = detailResults;
+
+        vm.detailList = {};
+        vm.movieID = $stateParams.imdbID;
+
+        movieService.movieDetails($stateParams.imdbID).then(
+            function(data) {
+            	vm.movie = data;
+            },
+            function(error) {
+
+            }
+        );
+    }
 
 })();

@@ -12,15 +12,15 @@
 
 		vm.searchResults = searchResults;
 		vm.movieSearch ='';
-
+		
 		//vm.message = "hello from search";
 
 		function searchResults(movie){
 
 			movieService.movieResults(movie).then(
 				function(data){
-					console.log(data)
-					vm.movieList = data;
+					vm.movieList = data; 
+					
 				}),
 				
 				function(error) {

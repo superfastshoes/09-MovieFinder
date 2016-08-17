@@ -13,13 +13,18 @@
 			<span class="input-group-btn">
 				<button class="btn btn-default" type="submit">Let's find a movie!</button>
 			</span>
-			<div>
-				<p></p>
-			</div>
-	</div>
+	</div>	
+		<div class="container" ng-repeat="x in search.movieList.Search">
+			<p>{{x.Title}}</p>
+			<img ng-src="{{x.Poster}}" alt="No Image Availabe">
+			<p>Filmed in {{x.Year}}</p>
+			<a ui-sref="detail({imdbID: x.imdbID })">Click here to view on IMDB</a>
+		</div>
 </form>
 
 
 
 
-<a ui-sref="detail">Go to Details</a>
+
+
+<!-- http://localhost:8080/#/detail?movieId=tt0372784 -->

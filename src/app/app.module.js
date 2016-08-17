@@ -15,7 +15,7 @@
 					controller: 'SearchController as search'   //Specifies where / or the name / of the controller
 				})
 				.state('detail', {
-					url: '/detail?movieId',
+					url: '/detail?movieId=/:imdbID',
 					templateUrl: 'app/detail/detail.html',
 					controller: 'DetailController as detail'
 				});
