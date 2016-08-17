@@ -9,18 +9,30 @@
 
 <form ng-submit="search.searchResults(search.movieSearch)">
 	<div class="input-group">
-		<input type="text" class="form-control" ng-model="search.movieSearch">
+		<input type="text" class="form-control" ng-model="search.movieSearch" placeholder="Type Your Movie Here">
 			<span class="input-group-btn">
-				<button class="btn btn-default" type="submit">Let's find a movie!</button>
+				<button class="btn btn-primary" type="submit">Let's find a movie!</button>
 			</span>
 	</div>	
-		<div class="container" ng-repeat="x in search.movieList.Search">
-			<p>{{x.Title}}</p>
-			<img ng-src="{{x.Poster}}" alt="No Image Availabe">
-			<p>Filmed in {{x.Year}}</p>
-			<a ui-sref="detail({imdbID: x.imdbID })">Click here to view on IMDB</a>
-		</div>
 </form>
+		<br>
+		<div class="row">	
+			<div class="col-xs-4" ng-repeat="x in search.movieList.Search">
+				<div class="panel panel-info">
+				  <div class="panel-heading">
+				  		{{x.Title}}
+				  </div>
+					<div class="panel-body">
+						<img ng-src="{{x.Poster}}" width="180px" alt="No Image Available">
+						<p>Filmed in {{x.Year}}</p>
+					  <div class="panel-footing">
+						<a ui-sref="detail({imdbID: x.imdbID })">Click here to view on IMDB</a>
+					  </div>	
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 
 

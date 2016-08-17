@@ -9,14 +9,8 @@
 
     function DetailController($stateParams, movieService) {
         var vm = this;
-        //vm.movieDetails = movieDetails;
-        //vm.detailResults = detailResults;
-
-        //vm.detailList = {};
-
 
         vm.movieID = $stateParams.imdbID;
-       // vm.movieData = {};
 
         movieService.movieDetails($stateParams.imdbID).then(
             function(data) {
