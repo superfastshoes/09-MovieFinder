@@ -1,29 +1,28 @@
 <!-- User will be doing their searching from here -->
 
-<div class="jumbotron text-center">
-	<h1>The Search Page</h1>	
-</div>
+
 
 <div ui-view></div>
 
-
 <form ng-submit="search.searchResults(search.movieSearch)">
-	<div class="input-group">
-		<input type="text" class="form-control" ng-model="search.movieSearch" placeholder="Type Your Movie Here">
-			<span class="input-group-btn">
-				<button class="btn btn-primary" type="submit">Let's find a movie!</button>
-			</span>
-	</div>	
+	<nav class="navbar navbar-inverse navbar-fixed-bottom container">
+		<div class="input-group">
+			<input type="text" class="form-control" ng-model="search.movieSearch" placeholder="Type Your Movie Here">
+				<span class="input-group-btn">
+					<button class="btn btn-primary" type="submit">Let's find a movie!</button>
+				</span>
+		</div>	
+	</nav>
 </form>
 		<br>
 		<div class="row">	
-			<div class="col-xs-4" ng-repeat="x in search.movieList.Search">
+			<div class="col-md-3" ng-repeat="x in search.movieList.Search">
 				<div class="panel panel-info">
 				  <div class="panel-heading">
 				  		{{x.Title}}
 				  </div>
 					<div class="panel-body">
-						<img ng-src="{{x.Poster}}" width="180px" alt="No Image Available">
+						<img class='poster' ng-src="{{x.Poster}}" alt="No Image Available">
 						<p>Filmed in {{x.Year}}</p>
 					  <div class="panel-footing">
 						<a ui-sref="detail({imdbID: x.imdbID })">Click here to view on IMDB</a>
